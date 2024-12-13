@@ -1,0 +1,38 @@
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: [Import/export options]
+1- Import from CSV
+2- Export to CSV
+3- Load data
+4- Save data
+b- Back to main menu
+Option: All data will be erased. Continue? [y/n]: All data will be erased. Continue? [y/n]: Enter filename: [Import/export options]
+1- Import from CSV
+2- Export to CSV
+3- Load data
+4- Save data
+b- Back to main menu
+Option: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:Teddy Sarao:teddy@streamflix.com:111.111.111.111:111.111.111.111
+2:Fez Berzos:fed@shopping.com::
+3:Sara Garcia:sara19@telefonica.net:223.224.225.226:223.224.225.226
+4:Mariano Lopez:marianolopez@lubinsa.es:239.240.241.242:239.240.241.242
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 

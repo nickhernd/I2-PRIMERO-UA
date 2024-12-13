@@ -1,0 +1,96 @@
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: ERROR: wrong name
+Enter name: Enter email: ERROR: wrong email
+Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:aitana:aitana.canto@saraesprima.com::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:aitana:aitana.canto@saraesprima.com::
+2:nico:nico@rico.es::
+3:javilo:mesacia@sax.com::
+4:keko:kekojones@huevos.com::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: ERROR: wrong subscriber id
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:aitana:aitana.canto@saraesprima.com::
+2:nico:nico@rico.es::
+3:javilo:mesacia@sax.com::
+4:keko:kekojones@huevos.com:128.0.0.1:128.0.0.1
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 

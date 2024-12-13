@@ -1,0 +1,171 @@
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: ERROR: wrong email
+Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:Luis Garcia:luis@ua.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:Luis Garcia:luis@ua.es::
+2:Rey:rey12@gmail.com::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: ERROR: wrong subscriber id
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: ERROR: wrong subscriber id
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: Enter IP: ERROR: wrong IP
+Enter IP: ERROR: wrong IP
+Enter IP: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:Luis Garcia:luis@ua.es::
+2:Rey:rey12@gmail.com:10.11.12.13:10.11.12.13
+3:Maria del Carmen Rovira:mariadelcarmen@movistar.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: Enter IP: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:Luis Garcia:luis@ua.es::
+2:Rey:rey12@gmail.com:10.11.12.13:10.11.12.13|14.15.16.17
+3:Maria del Carmen Rovira:mariadelcarmen@movistar.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: Enter IP: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 1:Luis Garcia:luis@ua.es::
+2:Rey:rey12@gmail.com:14.15.16.17:10.11.12.13|14.15.16.17|14.15.16.17
+3:Maria del Carmen Rovira:mariadelcarmen@movistar.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 2:Rey:rey12@gmail.com:14.15.16.17:10.11.12.13|14.15.16.17|14.15.16.17
+3:Maria del Carmen Rovira:mariadelcarmen@movistar.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: ERROR: wrong subscriber id
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter subscriber id: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 3:Maria del Carmen Rovira:mariadelcarmen@movistar.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: Enter name: Enter email: [Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 3:Maria del Carmen Rovira:mariadelcarmen@movistar.es::
+4:Raul Martinez:raulmartinez255@alicante.es::
+[Options]
+1- Show subscribers
+2- Add subscriber
+3- Add subscriber IP
+4- Delete subscriber
+5- Import/export
+q- Quit
+Option: 

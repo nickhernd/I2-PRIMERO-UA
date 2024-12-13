@@ -1,0 +1,57 @@
+2
+Teddy Sarao
+teddy@streamflix.com
+3
+1
+111.111.111.111
+3
+1
+222.222.222.222
+3
+1
+111.111.111.111
+2
+Fez Berzos
+fed@shopping.com
+2
+Sara Garcia
+sara19@telefonica.net
+3
+3
+223.224.225.226
+2
+Mariano Lopez
+marianolopez@lubinsa.es
+3
+4
+227.228.229.230
+3
+4
+231.232.233.234
+3
+4
+235.236.237.238
+3
+4
+239.240.241.242
+3
+4
+227.228.229.230
+3
+4
+231.232.233.234
+3
+4
+235.236.237.238
+3
+4
+239.240.241.242
+3
+4
+239.240.241.242
+5
+2
+salida-obtenida/fileExportToCSV.csv
+b
+q
+
