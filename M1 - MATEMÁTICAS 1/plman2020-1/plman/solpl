@@ -1,0 +1,124 @@
+:-use_module('pl-man-game/main').
+
+% Estados
+:-dynamic estado/1.
+estado(bajar).
+
+% Cambio de estado
+cambiar(EST):- retractall(estado(_)), assert(estado(EST)), writeln(EST).
+
+% Principal
+do(X):- estado(EST), do1(EST,X).
+
+% ESTADO: BAJAR
+% Prioridad a bajar si hay puntos abajo y es seguro
+do1(bajar, move(down)):-
+    not(see(normal,down,'#')),
+    not(see(normal,down,'F')),
+    see(list,down,L),
+    member('.',L),
+    writeln('Bajando por puntos').
+
+% Si hay fantasma cerca pero hay puntos en otra dirección segura
+do1(bajar, move(right)):-
+    see(normal,down,'F'),
+    see(normal,right,'.'),
+    not(see(normal,right,'F')),
+    writeln('Esquiva derecha por punto').
+
+do1(bajar, move(left)):-
+    see(normal,down,'F'),
+    see(normal,left,'.'),
+    not(see(normal,left,'F')),
+    writeln('Esquiva izquierda por punto').
+
+% Bajar normal usando espacios
+do1(bajar, move(down)):-
+    not(see(normal,down,'#')),
+    not(see(normal,down,'F')),
+    writeln('Bajando seguro').
+
+% Comenzar barrido horizontal
+do1(bajar, move(right)):-
+    see(normal,down,'#'),
+    cambiar(derecha),
+    writeln('Inicio barrido derecha').
+
+% ESTADO: DERECHA
+% Prioridad a puntos si son seguros
+do1(derecha, move(right)):-
+    see(normal,right,'.'),
+    not(see(normal,right,'F')),
+    writeln('Derecha punto seguro').
+
+% Usar espacios en blanco para moverse
+do1(derecha, move(right)):-
+    see(normal,right,' '),
+    not(see(normal,right,'F')),
+    writeln('Derecha espacio seguro').
+
+% Si hay punto abajo y es seguro, ir a por él
+do1(derecha, move(down)):-
+    see(normal,down,'.'),
+    not(see(normal,down,'F')),
+    writeln('Bajando por punto pendiente').
+
+% Escape hacia arriba solo si no hay puntos abajo
+do1(derecha, move(up)):-
+    see(normal,right,'F'),
+    not(see(normal,up,'F')),
+    not(see(normal,down,'.')),
+    writeln('Escape arriba sin puntos pendientes').
+
+% Cambio a izquierda
+do1(derecha, move(left)):-
+    see(normal,right,'#'),
+    cambiar(izquierda),
+    writeln('Cambio a izquierda').
+
+% ESTADO: IZQUIERDA
+% Prioridad a puntos si son seguros
+do1(izquierda, move(left)):-
+    see(normal,left,'.'),
+    not(see(normal,left,'F')),
+    writeln('Izquierda punto seguro').
+
+% Usar espacios en blanco para moverse
+do1(izquierda, move(left)):-
+    see(normal,left,' '),
+    not(see(normal,left,'F')),
+    writeln('Izquierda espacio seguro').
+
+% Si hay punto abajo y es seguro, ir a por él
+do1(izquierda, move(down)):-
+    see(normal,down,'.'),
+    not(see(normal,down,'F')),
+    writeln('Bajando por punto pendiente').
+
+% Escape hacia arriba solo si no hay puntos abajo
+do1(izquierda, move(up)):-
+    see(normal,left,'F'),
+    not(see(normal,up,'F')),
+    not(see(normal,down,'.')),
+    writeln('Escape arriba sin puntos pendientes').
+
+% Subir cuando no hay más puntos en nivel actual
+do1(izquierda, move(up)):-
+    see(normal,left,'#'),
+    not(see(normal,down,'.')),
+    not(see(normal,up,'#')),
+    cambiar(derecha),
+    writeln('Subir nivel, sin puntos pendientes').
+
+% REGLAS DE MOVIMIENTO SEGURO (para espacios en blanco)
+do1(EST, move(DIR)):-
+    member(EST,[derecha,izquierda]),
+    member(DIR,[up,down,left,right]),
+    see(normal,DIR,' '),
+    not(see(normal,DIR,'F')),
+    not(see(list,DIR,[_,'F'|_])),
+    writeln('Movimiento seguro por espacio').
+
+% Si no hay otra opción segura
+do1(_, move(none)):-
+    writeln('Esperando movimiento seguro').

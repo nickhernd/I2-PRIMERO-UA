@@ -1,0 +1,115 @@
+#!/bin/bash
+###
+### Script multilanzamiento de PLMAN
+### Copyright (C) 2009 Francisco José Gallego Durán <ronaldo@cheesetea.com>
+###
+### This program is free software; you can redistribute it and/or modify
+### it under the terms of the GNU General Public License as published by
+### the Free Software Foundation; version 2 of the License.
+###
+### This program is distributed in the hope that it will be useful,
+### but WITHOUT ANY WARRANTY; without even the implied warranty of
+### MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+### GNU General Public License for more details.
+###
+
+# VARIABLES
+MAX_MOVIMIENTOS=1250                        # Máximo número de movimientos por defecto
+CARPETA_LOGS=logs/                          # Carpeta donde se almacenan los logs
+LOG_FILENAME=log_ejecucion_                 # Nombre que tendrán los logs de ejecución
+TEMPORAL=/tmp/mificherotemporalalal12834    # Fichero temporal
+VECES=$1                                    # Veces que se ejecutará plman
+shift
+CMD="./plman $@ -n -m $MAX_MOVIMIENTOS"     # Comando de ejecución de plman, con parámetros añadidos
+
+##
+## Print script usage instructions on console
+##
+function usage()
+{
+    echo "Script usage $0 "
+    echo
+    echo "   $0 <N> <MAP> <SOL> [ PARAMETERS ]"
+    echo
+    echo " * N:     Number of times to automatically launch plman"
+    echo " * MAP:   Map to be evaluated"
+    echo " * SOL:   Solution file used for MAP"
+    echo 
+    echo "Executes PLMan N times using MAP & SOL files. PARAMETERS will be directly forwarded to "
+    echo "plman script. This script shows only the final result of each execution, and calculates the "
+    echo "total sum and average of all executions performed. "
+    echo "In order to know concrete details of some executions, a logs folder ($CARPETA_LOGS by default) is "
+    echo "created. Logs from executions non-100% completed are automatically stored there. "
+    echo
+    echo "Usage examples:"
+    echo 
+    echo " $ ./launch 10 maps/f4/map0.pl sol.pl"
+    echo
+    echo "     Launches plman 10 times with map0.pl from stage 4, using sol.pl for solving it"
+    echo
+    echo " $ ./launch 1200 maps/f5/impossiblemap.pl attempt.pl -m 500"
+    echo 
+    echo "     Launches plman 1200 times to solve impossiblemap.pl from stage 5, using the file "
+    echo "     intento.pl. Moreover, it limits each execution to a maximum of 500 movements, "
+    echo "     ending it whenever this limit is reached. "
+    echo
+}
+
+# COMPROBAR PARÁMETROS MÍNIMOS (teniendo en cuenta que hemos hecho 1 shift)
+if [[ $# < 2 ]]; then
+    usage
+    exit -1
+fi
+
+# CREAR CARPETA DE LOGS SI NO EXISTE
+if [ ! -d $CARPETA_LOGS ]; then
+    echo "$CARPETA_LOGS folder has been created. Execution logs will be stored there."
+    echo
+    mkdir $CARPETA_LOGS
+fi
+
+# COMPROBAR QUE SE PUEDE ESCRIBIR EN LA CARPETA DE LOGS
+if [ ! -w $CARPETA_LOGS ]; then
+    echo "ERROR: No permission to write to folder $CARPETA_LOGS."
+    echo
+    exit
+fi
+
+# BUCLE PRINCIPAL
+A=1
+E=0
+MEDIA=0
+while (( A <= VECES )); do
+    LOG="$CARPETA_LOGS/${LOG_FILENAME}${A}"
+    # Ejecutar comando redirigiendo salida a fichero temporal
+    $CMD $PARAMETROS -l $LOG &> $TEMPORAL
+    RESULT=`grep "Final Status" $TEMPORAL`
+    echo -n "Execution $A: "
+    
+    # COMPROBAR SI HA TENIDO ÉXITO LA EJECUCIÓN
+    if grep "MAP SOLVED" <<< $RESULT &> /dev/null; then
+        echo "MAP COMPLETED 100%"
+        MEDIA=$(awk "BEGIN {print $MEDIA + 100; exit}")
+        rm $LOG
+        E=$((E+1))
+    elif grep "MAX MOVEMENTS LIMITS REACHED" <<< $RESULT &> /dev/null; then
+        echo "MAXIMUM NUMBER OF MOVEMENTS EXCEEDED"
+    else
+        echo -n "PLMAN DIED >> "
+        grep "Eaten dots" $TEMPORAL
+        COMPLETED=$(grep "Eaten dots" $TEMPORAL | cut -d "(" -f2 | cut -d "%" -f1)
+        MEDIA=$(awk "BEGIN {print $MEDIA + $COMPLETED; exit}")
+    fi
+    A=$(($A+1))
+done
+
+echo "------------------------------------------------------"
+echo "-- GLOBAL RESULTS:"
+echo "------------------------------------------------------"
+PC=$((100*$E/$VECES))
+PM=$(awk "BEGIN {print $MEDIA / $VECES; exit}")
+echo "Total number of maps completed 100%: $E of $VECES ($PC%)"
+echo "Percentage of eaten dots (marks): $PM%"
+echo 
+
+# Versionado por Imphinium
